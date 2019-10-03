@@ -1,0 +1,51 @@
+<template>
+  <svg :class="svgClass" aria-hidden="true" v-on="$listeners">
+    <use :xlink:href="iconName" />
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'SvgIcon',
+  props: {
+    iconClass: {
+      type: String,
+      required: true,
+    },
+    className: {
+      type: String,
+      default: '',
+    },
+  },
+  computed: {
+    iconName() {
+      return `#icon-${this.iconClass}`;
+    },
+    svgClass() {
+      if (this.className) {
+        return 'svg-icon ' + this.className;
+      } else {
+        return 'svg-icon';
+      }
+    },
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+  .svg-icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
+  .el-menu-item .svg-icon, .el-submenu__title .svg-icon {
+    width: 2em;
+    height: 2em;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+</style>

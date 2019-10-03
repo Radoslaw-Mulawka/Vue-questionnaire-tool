@@ -1,0 +1,21 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+#
+# Following HTTP Request Live Templates are available:
+# * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+# * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+# * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+### Authorization by token, part 2. Use token to authorize.
+POST http://{{host}}/auth/register
+Content-Type: application/json
+
+{
+  "email" : "nkub02@si-consulting.pl",
+  "password" : "secret",
+  "password_confirmation": "secret",
+  "accept_terms": 1
+}
+
+
+
+###
